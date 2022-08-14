@@ -24,6 +24,7 @@ from result import QueryStatus
 from result import QueryResult
 from notify import QueryNotifyPrint
 from sites import SitesInformation
+from randomizer import Randomizer
 from colorama import init
 
 module_name = "Sherlock: Find Usernames Across Social Networks"
@@ -556,6 +557,10 @@ def main():
                         action="store_true", default=False,
                         help="Force the use of the local data.json file.")
 
+    parser.add_argument("--randomizer", "-r",
+                        action="store_true", default=False,
+                        help="Apply username randomization.")
+
     args = parser.parse_args()
 
     # Check for newer version of Sherlock. If it exists, let the user know about it
@@ -645,6 +650,11 @@ def main():
 
         if not site_data:
             sys.exit(1)
+    
+    if args.randomizer:
+        rand_usernames = []
+        for username in args.username:
+            rand_usernames.extend(Randomizer.randomizer(username=username, range_lim=100))
 
     # Create notify object for query results.
     query_notify = QueryNotifyPrint(result=None,
@@ -654,6 +664,9 @@ def main():
     # Run report on all specified users.
 
     all_usernames = []
+    if len(rand_usernames) > 0:
+        all_usernames.extend(rand_usernames)
+
     for username in args.username:
         if(CheckForParameter(username)):
             for name in MultipleUsernames(username):

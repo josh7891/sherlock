@@ -70,6 +70,21 @@
     "username_claimed": "dens",
     "username_unclaimed": "noonewouldeverusethis7"
   },
+  "GitHub Support Community": {
+    "errorMsg": "Oops! That page doesn\u2019t exist or is private.",
+    "errorType": "message",
+    "url": "https://github.community/u/{}/summary",
+    "urlMain": "https://github.community",
+    "username_claimed": "jperl",
+    "username_unclaimed": "noonewouldusethis298"
+  },
+  "GuruShots": {
+    "errorType": "status_code",
+    "url": "https://gurushots.com/{}/photos",
+    "urlMain": "https://gurushots.com/",
+    "username_claimed": "blue",
+    "username_unclaimed": "noonewouldeverusethis7"
+  },
   "gpodder.net": {
     "errorType": "status_code",
     "url": "https://gpodder.net/user/{}",
@@ -726,4 +741,20 @@
     "username_claimed": "troyhunt",
     "username_unclaimed": "noonewouldeverusethis7"
   }
+},
+"Quizlet": {
+  "errorMsg": "checkUsername\":{\"success\":true",
+  "errorType": "message",
+  "url": "https://quizlet.com/{}",
+  "urlMain": "https://quizlet.com",
+  "urlProbe": "https://quizlet.com/webapi/3.2/users/check-username?username={}",
+  "username_claimed": "blue",
+  "username_unclaimed": "noonewouldeverusethis"
+},
+"Star Citizen": {
+  "errorType": "status_code",
+  "url": "https://robertsspaceindustries.com/citizens/{}",
+  "urlMain": "https://robertsspaceindustries.com/",
+  "username_claimed": "blue",
+  "username_unclaimed": "noonewouldeverusethis7"
 }

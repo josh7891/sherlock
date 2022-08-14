@@ -651,8 +651,8 @@ def main():
         if not site_data:
             sys.exit(1)
     
+    rand_usernames = []
     if args.randomizer:
-        rand_usernames = []
         for username in args.username:
             rand_usernames.extend(Randomizer.randomizer(username=username, range_lim=100))
 
